@@ -58,7 +58,7 @@ h1 {
     color: #555;
 }
 
-/* Task bar with internal date display */
+/* Task bar with gradient background */
 .task-bar {
     position: relative;
     height: 40px; /* Keep height for alignment */
@@ -77,7 +77,6 @@ h1 {
     margin-top: 5px;
     left: 0; /* Reset left to align dynamically */
     background-clip: padding-box; /* Ensure background doesn't overlap borders */
-    background-color: #d3d3d3; /* Light gray background for task bars */
 }
 
 /* Remove tooltip functionality */
@@ -113,4 +112,89 @@ h1 {
 .task-bar {
     position: relative;
     z-index: 1;
+}
+
+/* Pastel gradient colors for task bars */
+.task-bar[style*="background-color: lightblue;"] {
+    background: linear-gradient(to right, #b3e5fc, #81d4fa); /* Pastel light blue gradient */
+}
+
+.task-bar[style*="background-color: salmon;"] {
+    background: linear-gradient(to right, #ffcccb, #ffab91); /* Pastel salmon gradient */
+}
+
+.task-bar[style*="background-color: lightgreen;"] {
+    background: linear-gradient(to right, #c8e6c9, #a5d6a7); /* Pastel light green gradient */
+}
+
+.task-bar[style*="background-color: lightseagreen;"] {
+    background: linear-gradient(to right, #b2dfdb, #80cbc4); /* Pastel light sea green gradient */
+}
+
+.task-bar[style*="background-color: darkslategray;"] {
+    background: linear-gradient(to right, #cfd8dc, #b0bec5); /* Pastel dark slate gray gradient */
+}
+
+.task-bar[style*="background-color: pink;"] {
+    background: linear-gradient(to right, #f8bbd0, #f48fb1); /* Pastel pink gradient */
+}
+
+.task-bar[style*="background-color: aqua;"] {
+    background: linear-gradient(to right, #b2ebf2, #80deea); /* Pastel aqua gradient */
+}
+
+.task-bar[style*="background-color: gray;"] {
+    background: linear-gradient(to right, #e0e0e0, #bdbdbd); /* Pastel gray gradient */
+}
+
+.task-bar[style*="background-color: olive;"] {
+    background: linear-gradient(to right, #dce775, #c5e1a5); /* Pastel olive gradient */
+}
+
+.task-bar[style*="background-color: yellow;"] {
+    background: linear-gradient(to right, #fff9c4, #fff59d); /* Pastel yellow gradient */
+}
+
+.task-bar[style*="background-color: orange;"] {
+    background: linear-gradient(to right, #ffe0b2, #ffcc80); /* Pastel orange gradient */
+}
+
+.task-bar[style*="background-color: magenta;"] {
+    background: linear-gradient(to right, #e1bee7, #ce93d8); /* Pastel magenta gradient */
+}
+
+.task-bar[style*="background-color: purple;"] {
+    background: linear-gradient(to right, #d1c4e9, #b39ddb); /* Pastel purple gradient */
+}
+
+.task-bar[style*="background-color: lightcoral;"] {
+    background: linear-gradient(to right, #ffcdd2, #ef9a9a); /* Pastel light coral gradient */
+}
+
+.task-bar[style*="background-color: darkorange;"] {
+    background: linear-gradient(to right, #ffcc80, #ffab40); /* Pastel dark orange gradient */
+}
+
+.task-bar[style*="background-color: steelblue;"] {
+    background: linear-gradient(to right, #bbdefb, #90caf9); /* Pastel steel blue gradient */
+}
+
+.task-bar[style*="background-color: teal;"] {
+    background: linear-gradient(to right, #b2dfdb, #80cbc4); /* Pastel teal gradient */
+}
+
+.task-bar[style*="background-color: darkred;"] {
+    background: linear-gradient(to right, #ef9a9a, #e57373); /* Pastel dark red gradient */
+}
+
+.task-bar[style*="background-color: darkblue;"] {
+    background: linear-gradient(to right, #c5cae9, #9fa8da); /* Pastel dark blue gradient */
+}
+
+.task-bar[style*="background-color: darkgreen;"] {
+    background: linear-gradient(to right, #a5d6a7, #81c784); /* Pastel dark green gradient */
+}
+
+.task-bar[style*="background-color: navy;"] {
+    background: linear-gradient(to right, #c5cae9, #9fa8da); /* Pastel navy gradient */
 }
