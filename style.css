@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #d3d3d3; /* Change entire background to light gray */
 }
 
 h1 {
@@ -58,24 +58,41 @@ h1 {
     color: #555;
 }
 
+/* Task bar with internal date display */
 .task-bar {
-    position: absolute;
-    height: 40px; /* Keep height to fit text */
+    position: relative;
+    height: 40px; /* Keep height for alignment */
     line-height: 40px; /* Center text vertically */
     text-align: center; /* Center text horizontally */
     color: #000; /* Keep font color black for visibility */
-    font-size: 8px; /* Keep smaller font size for dates */
-    overflow: hidden; /* Prevent text overflow */
+    font-size: 10px; /* Slightly larger font size for readability */
+    overflow: visible; /* Allow text to overflow for visibility */
     white-space: nowrap; /* Prevent text wrapping */
-    padding: 0 5px; /* Adjust padding for better spacing */
+    padding: 0 5px; /* Add padding for better spacing */
     box-sizing: border-box; /* Include padding in width calculation */
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    /* Ensure task bars are aligned with the header */
     transition: all 0.3s ease-in-out;
     top: 5px; /* Align task bars with the date headers */
     margin-top: 5px;
     left: 0; /* Reset left to align dynamically */
+    background-clip: padding-box; /* Ensure background doesn't overlap borders */
+    background-color: #d3d3d3; /* Light gray background for task bars */
+}
+
+/* Remove tooltip functionality */
+.task-bar:hover::after {
+    content: none;
+}
+
+/* Ensure dates are visible inside the bars */
+.task-bar span {
+    position: static; /* Keep dates inside the bar */
+    color: #000; /* Use black text for better contrast on gray background */
+    font-weight: bold; /* Make dates more prominent */
+    white-space: nowrap; /* Prevent wrapping */
+    z-index: 2; /* Ensure text is above the bar */
+    overflow: visible; /* Allow text to overflow */
 }
 
 /* Optional: Add a border for each task row */
