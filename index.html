@@ -10,242 +10,364 @@
 
     <h1>Gantt Chart for Software Company Expansion</h1>
 
-    <!-- Gantt Chart Container -->
+    <!-- Gantt Chart Table -->
     <div class="gantt-container">
-        <div class="gantt-tasks">
-            <!-- Month 1: Initial Planning and Research -->
-            <div class="task">
-                <div class="task-name"><strong>Month 1: Initial Planning and Research</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Search and Lease Office Space</div>
-                <div class="task-bar" style="left: 0%; width: 20%; background-color: lightblue;">
-                    <span>May 1 - May 10</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Renovation and Office Setup Planning</div>
-                <div class="task-bar" style="left: 0%; width: 20%; background-color: salmon;">
-                    <span>May 11 - May 20</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Research Suppliers</div>
-                <div class="task-bar" style="left: 0%; width: 20%; background-color: lightgreen;">
-                    <span>May 10 - May 20</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Research Legal Requirements</div>
-                <div class="task-bar" style="left: 0%; width: 20%; background-color: lightseagreen;">
-                    <span>May 1 - May 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Risk Identification and Analysis</div>
-                <div class="task-bar" style="left: 0%; width: 20%; background-color: darkslategray;">
-                    <span>May 16 - May 25</span>
-                </div>
-            </div>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th style="width: 30%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">TASK</th>
+                    <th style="width: 50%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">TIMEFRAME</th>
+                    <th style="width: 20%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">RESOURCE ALLOCATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Month 1: Initial Planning and Research -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 1: Initial Planning and Research</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Search and Lease Office Space</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 0%; width: 20%; background-color: lightblue;">
+                            <span>May 1 - May 10</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Real Estate Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Renovation and Office Setup Planning</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 0%; width: 20%; background-color: salmon;">
+                            <span>May 11 - May 20</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Facilities Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Research Suppliers</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 0%; width: 20%; background-color: lightgreen;">
+                            <span>May 10 - May 20</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Procurement Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Research Legal Requirements</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 0%; width: 20%; background-color: lightseagreen;">
+                            <span>May 1 - May 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Legal Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Risk Identification and Analysis</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 0%; width: 20%; background-color: darkslategray;">
+                            <span>May 16 - May 25</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Risk Management Team</td>
+                </tr>
 
-            <!-- Month 2: Procurement, Hiring Process, and Preparation -->
-            <div class="task">
-                <div class="task-name"><strong>Month 2: Procurement, Hiring Process, and Preparation</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Renovation and Office Setup</div>
-                <div class="task-bar" style="left: 20%; width: 15%; background-color: salmon;">
-                    <span>Jun 1 - Jun 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Order Furniture and Equipment</div>
-                <div class="task-bar" style="left: 20%; width: 15%; background-color: pink;">
-                    <span>Jun 5 - Jun 20</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Job Postings and Recruitment</div>
-                <div class="task-bar" style="left: 20%; width: 7.5%; background-color: aqua;">
-                    <span>Jun 1 - Jun 10</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Interviews and Hiring</div>
-                <div class="task-bar" style="left: 20%; width: 15%; background-color: gray;">
-                    <span>Jun 11 - Jun 20</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Mitigation Plans</div>
-                <div class="task-bar" style="left: 20%; width: 15%; background-color: olive;">
-                    <span>Jun 15 - Jun 25</span>
-                </div>
-            </div>
+                <!-- Month 2: Procurement, Hiring Process, and Preparation -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 2: Procurement, Hiring Process, and Preparation</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Renovation and Office Setup</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 20%; width: 15%; background-color: salmon;">
+                            <span>Jun 1 - Jun 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Facilities Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Order Furniture and Equipment</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 20%; width: 15%; background-color: pink;">
+                            <span>Jun 5 - Jun 20</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Procurement Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Job Postings and Recruitment</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 20%; width: 7.5%; background-color: aqua;">
+                            <span>Jun 1 - Jun 10</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Interviews and Hiring</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 20%; width: 15%; background-color: gray;">
+                            <span>Jun 11 - Jun 20</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Mitigation Plans</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 20%; width: 15%; background-color: olive;">
+                            <span>Jun 15 - Jun 25</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Risk Management Team</td>
+                </tr>
 
-            <!-- Month 3: IT Setup, Compliance, and Onboarding -->
-            <div class="task">
-                <div class="task-name"><strong>Month 3: IT Setup, Compliance, and Onboarding</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Set Up Network and Servers</div>
-                <div class="task-bar" style="left: 35%; width: 15%; background-color: yellow;">
-                    <span>Jul 1 - Jul 7</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Install Software and Systems</div>
-                <div class="task-bar" style="left: 35%; width: 15%; background-color: orange;">
-                    <span>Jul 8 - Jul 14</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Test Systems and Infrastructure</div>
-                <div class="task-bar" style="left: 35%; width: 15%; background-color: magenta;">
-                    <span>Jul 15 - Jul 20</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Delivery and Setup</div>
-                <div class="task-bar" style="left: 35%; width: 15%; background-color: purple;">
-                    <span>Jul 1 - Jul 7</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Onboarding and Training</div>
-                <div class="task-bar" style="left: 35%; width: 15%; background-color: lightcoral;">
-                    <span>Jul 8 - Jul 25</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Apply for Permits</div>
-                <div class="task-bar" style="left: 35%; width: 15%; background-color: darkorange;">
-                    <span>Jul 1 - Jul 10</span>
-                </div>
-            </div>
+                <!-- Month 3: IT Setup, Compliance, and Onboarding -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 3: IT Setup, Compliance, and Onboarding</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Set Up Network and Servers</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 35%; width: 15%; background-color: yellow;">
+                            <span>Jul 1 - Jul 7</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Install Software and Systems</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 35%; width: 15%; background-color: orange;">
+                            <span>Jul 8 - Jul 14</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Test Systems and Infrastructure</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 35%; width: 15%; background-color: magenta;">
+                            <span>Jul 15 - Jul 20</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Delivery and Setup</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 35%; width: 15%; background-color: purple;">
+                            <span>Jul 1 - Jul 7</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Procurement Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Onboarding and Training</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 35%; width: 15%; background-color: lightcoral;">
+                            <span>Jul 8 - Jul 25</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Apply for Permits</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 35%; width: 15%; background-color: darkorange;">
+                            <span>Jul 1 - Jul 10</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Legal Team</td>
+                </tr>
 
-            <!-- Month 4: IT Testing, Continued Onboarding, and Final Compliance Check -->
-            <div class="task">
-                <div class="task-name"><strong>Month 4: IT Testing, Continued Onboarding, and Final Compliance Check</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Test Systems and Infrastructure (cont.)</div>
-                <div class="task-bar" style="left: 50%; width: 15%; background-color: magenta;">
-                    <span>Aug 1 - Aug 7</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Onboarding and Training (cont.)</div>
-                <div class="task-bar" style="left: 50%; width: 15%; background-color: lightcoral;">
-                    <span>Aug 1 - Aug 7</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Final Compliance Check</div>
-                <div class="task-bar" style="left: 50%; width: 15%; background-color: darkcyan;">
-                    <span>Aug 5 - Aug 10</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Internal Communication</div>
-                <div class="task-bar" style="left: 50%; width: 15%; background-color: steelblue;">
-                    <span>Aug 1 - Aug 31</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">External Communication</div>
-                <div class="task-bar" style="left: 50%; width: 15%; background-color: teal;">
-                    <span>Aug 1 - Aug 31</span>
-                </div>
-            </div>
+                <!-- Month 4: IT Testing, Continued Onboarding, and Final Compliance Check -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 4: IT Testing, Continued Onboarding, and Final Compliance Check</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Test Systems and Infrastructure (cont.)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 50%; width: 15%; background-color: magenta;">
+                            <span>Aug 1 - Aug 7</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Onboarding and Training (cont.)</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 50%; width: 15%; background-color: lightcoral;">
+                            <span>Aug 1 - Aug 7</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Final Compliance Check</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 50%; width: 15%; background-color: darkcyan;">
+                            <span>Aug 5 - Aug 10</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Legal Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Internal Communication</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 50%; width: 15%; background-color: steelblue;">
+                            <span>Aug 1 - Aug 31</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Communications Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">External Communication</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 50%; width: 15%; background-color: teal;">
+                            <span>Aug 1 - Aug 31</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Communications Team</td>
+                </tr>
 
-            <!-- Month 5: Logistics and Relocation -->
-            <div class="task">
-                <div class="task-name"><strong>Month 5: Logistics and Relocation</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Plan Relocation Logistics</div>
-                <div class="task-bar" style="left: 65%; width: 10%; background-color: darkred;">
-                    <span>Sep 1 - Sep 10</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Move Office Equipment</div>
-                <div class="task-bar" style="left: 65%; width: 10%; background-color: darkblue;">
-                    <span>Sep 11 - Sep 20</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Set Up the New Office Space</div>
-                <div class="task-bar" style="left: 65%; width: 10%; background-color: darkgreen;">
-                    <span>Sep 21 - Sep 30</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Final Onboarding</div>
-                <div class="task-bar" style="left: 65%; width: 10%; background-color: lightcoral;">
-                    <span>Sep 1 - Sep 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Milestone Reporting</div>
-                <div class="task-bar" style="left: 65%; width: 10%; background-color: navy;">
-                    <span>Sep 10 - Sep 30</span>
-                </div>
-            </div>
+                <!-- Month 5: Logistics and Relocation -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 5: Logistics and Relocation</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Plan Relocation Logistics</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 65%; width: 10%; background-color: darkred;">
+                            <span>Sep 1 - Sep 10</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Logistics Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Move Office Equipment</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 65%; width: 10%; background-color: darkblue;">
+                            <span>Sep 11 - Sep 20</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Logistics Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Set Up the New Office Space</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 65%; width: 10%; background-color: darkgreen;">
+                            <span>Sep 21 - Sep 30</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Facilities Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Final Onboarding</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 65%; width: 10%; background-color: lightcoral;">
+                            <span>Sep 1 - Sep 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Milestone Reporting</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 65%; width: 10%; background-color: navy;">
+                            <span>Sep 10 - Sep 30</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Project Management Team</td>
+                </tr>
 
-            <!-- Month 6: Office Setup and Final Compliance Check -->
-            <div class="task">
-                <div class="task-name"><strong>Month 6: Office Setup and Final Compliance Check</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Complete Office Setup</div>
-                <div class="task-bar" style="left: 75%; width: 10%; background-color: salmon;">
-                    <span>Oct 1 - Oct 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Final Testing and Adjustments</div>
-                <div class="task-bar" style="left: 75%; width: 5%; background-color: magenta;">
-                    <span>Oct 1 - Oct 7</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Finalize Compliance</div>
-                <div class="task-bar" style="left: 75%; width: 5%; background-color: darkcyan;">
-                    <span>Oct 8 - Oct 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Final Milestone Reporting</div>
-                <div class="task-bar" style="left: 75%; width: 10%; background-color: steelblue;">
-                    <span>Oct 1 - Oct 31</span>
-                </div>
-            </div>
+                <!-- Month 6: Office Setup and Final Compliance Check -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 6: Office Setup and Final Compliance Check</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Complete Office Setup</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 75%; width: 10%; background-color: salmon;">
+                            <span>Oct 1 - Oct 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Facilities Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Final Testing and Adjustments</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 75%; width: 5%; background-color: magenta;">
+                            <span>Oct 1 - Oct 7</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Finalize Compliance</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 75%; width: 5%; background-color: darkcyan;">
+                            <span>Oct 8 - Oct 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Legal Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Final Milestone Reporting</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 75%; width: 10%; background-color: steelblue;">
+                            <span>Oct 1 - Oct 31</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Project Management Team</td>
+                </tr>
 
-            <!-- Month 7: Finalizing the Project and Risk Management -->
-            <div class="task">
-                <div class="task-name"><strong>Month 7: Finalizing the Project and Risk Management</strong></div>
-            </div>
-            <div class="task">
-                <div class="task-name">Contingency Planning and Risk Mitigation</div>
-                <div class="task-bar" style="left: 85%; width: 10%; background-color: olive;">
-                    <span>Nov 1 - Nov 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Final Reporting to Stakeholders</div>
-                <div class="task-bar" style="left: 85%; width: 5%; background-color: teal;">
-                    <span>Nov 10 - Nov 15</span>
-                </div>
-            </div>
-            <div class="task">
-                <div class="task-name">Finalize Remaining Tasks</div>
-                <div class="task-bar" style="left: 85%; width: 10%; background-color: navy;">
-                    <span>Nov 16 - Nov 30</span>
-                </div>
-            </div>
-        </div>
+                <!-- Month 7: Finalizing the Project and Risk Management -->
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;"><strong>Month 7: Finalizing the Project and Risk Management</strong></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                    <td style="padding: 10px; border: 1px solid #ddd;"></td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Contingency Planning and Risk Mitigation</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 85%; width: 10%; background-color: olive;">
+                            <span>Nov 1 - Nov 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Risk Management Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Final Reporting to Stakeholders</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 85%; width: 5%; background-color: teal;">
+                            <span>Nov 10 - Nov 15</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Project Management Team</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Finalize Remaining Tasks</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">
+                        <div class="task-bar" style="left: 85%; width: 10%; background-color: navy;">
+                            <span>Nov 16 - Nov 30</span>
+                        </div>
+                    </td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">Project Management Team</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </body>
