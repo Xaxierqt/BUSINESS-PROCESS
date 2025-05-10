@@ -18,6 +18,9 @@ h1 {
     margin-top: 20px;
     position: relative; /* Ensure proper positioning for task bars */
     overflow-x: auto;  /* Allow horizontal scrolling for large timelines */
+    background: linear-gradient(to right, #f9f9f9 1px, transparent 1px), 
+                linear-gradient(to bottom, #f9f9f9 1px, transparent 1px);
+    background-size: 50px 50px; /* Adjust grid size */
 }
 
 .gantt-header {
@@ -48,7 +51,7 @@ h1 {
 .task {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Increase spacing for better arrow placement */
 }
 
 .task-name {
@@ -61,22 +64,28 @@ h1 {
 /* Task bar with gradient background */
 .task-bar {
     position: relative;
-    height: 40px; /* Keep height for alignment */
-    line-height: 40px; /* Center text vertically */
+    height: 30px; /* Reduce height for compactness */
+    line-height: 30px; /* Center text vertically */
     text-align: center; /* Center text horizontally */
     color: #000; /* Keep font color black for visibility */
-    font-size: 10px; /* Slightly larger font size for readability */
+    font-size: 12px; /* Adjust font size for readability */
     overflow: visible; /* Allow text to overflow for visibility */
     white-space: nowrap; /* Prevent text wrapping */
     padding: 0 5px; /* Add padding for better spacing */
     box-sizing: border-box; /* Include padding in width calculation */
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
     top: 5px; /* Align task bars with the date headers */
     margin-top: 5px;
     left: 0; /* Reset left to align dynamically */
     background-clip: padding-box; /* Ensure background doesn't overlap borders */
+}
+
+/* Highlight task bar on hover */
+.task-bar:hover {
+    transform: scale(1.05);
+    z-index: 2;
 }
 
 /* Remove tooltip functionality */
@@ -197,4 +206,42 @@ h1 {
 
 .task-bar[style*="background-color: navy;"] {
     background: linear-gradient(to right, #c5cae9, #9fa8da); /* Pastel navy gradient */
+}
+
+/* Remove styles for dependency lines */
+.dependency-line {
+    display: none;
+}
+
+/* Style for the dependency arrow icon */
+.dependency-arrow {
+    cursor: pointer;
+    color: #007bff;
+    font-size: 14px;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: color 0.2s ease-in-out;
+}
+
+.dependency-arrow:hover {
+    color: #0056b3;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    font-size: 14px;
+    color: #333;
+    pointer-events: none; /* Ensure the tooltip doesn't block mouse events */
+}
+
+.tooltip-content {
+    max-width: 300px;
+    word-wrap: break-word;
 }
