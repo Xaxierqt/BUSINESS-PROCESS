@@ -69,4 +69,41 @@ document.addEventListener("DOMContentLoaded", () => {
             hideTooltip();
         });
     });
+
+    const milestoneTooltip = document.createElement("div");
+    milestoneTooltip.className = "milestone-tooltip";
+    document.body.appendChild(milestoneTooltip);
+
+    const showMilestoneTooltip = (event, milestone, date, reason) => {
+        milestoneTooltip.innerHTML = `
+            <strong>${milestone}</strong><br>
+            📅 <strong>Date:</strong> ${date}<br>
+            💬 <strong>Reason:</strong> ${reason}
+        `;
+        milestoneTooltip.style.left = `${event.pageX + 10}px`;
+        milestoneTooltip.style.top = `${event.pageY + 10}px`;
+        milestoneTooltip.classList.add("visible");
+    };
+
+    const hideMilestoneTooltip = () => {
+        milestoneTooltip.classList.remove("visible");
+    };
+
+    document.querySelectorAll(".milestone").forEach((milestone) => {
+        milestone.addEventListener("mouseover", (event) => {
+            const milestoneName = milestone.getAttribute("data-milestone");
+            const date = milestone.getAttribute("data-date");
+            const reason = milestone.getAttribute("data-reason");
+            showMilestoneTooltip(event, milestoneName, date, reason);
+        });
+
+        milestone.addEventListener("mousemove", (event) => {
+            milestoneTooltip.style.left = `${event.pageX + 10}px`;
+            milestoneTooltip.style.top = `${event.pageY + 10}px`;
+        });
+
+        milestone.addEventListener("mouseout", () => {
+            hideMilestoneTooltip();
+        });
+    });
 });
