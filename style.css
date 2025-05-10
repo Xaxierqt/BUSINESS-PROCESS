@@ -1,0 +1,99 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.gantt-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    position: relative; /* Ensure proper positioning for task bars */
+    overflow-x: auto;  /* Allow horizontal scrolling for large timelines */
+}
+
+.gantt-header {
+    display: none; /* Remove the month headers */
+}
+
+.date-header {
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+    border-left: 1px solid #ddd;
+    white-space: nowrap;
+    min-width: auto; /* Adjust width dynamically based on grid */
+}
+
+.date-header:first-child {
+    border-left: none;
+}
+
+.gantt-tasks {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    position: relative; /* Ensure task bars align with the timeline */
+    padding-left: 0; /* Remove unnecessary left padding */
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-name {
+    width: 180px; /* Adjust width to fit better on the screen */
+    padding-left: 5px; /* Reduce padding for better alignment */
+    font-size: 14px;
+    color: #555;
+}
+
+.task-bar {
+    position: absolute;
+    height: 40px; /* Keep height to fit text */
+    line-height: 40px; /* Center text vertically */
+    text-align: center; /* Center text horizontally */
+    color: #000; /* Keep font color black for visibility */
+    font-size: 8px; /* Keep smaller font size for dates */
+    overflow: hidden; /* Prevent text overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+    padding: 0 5px; /* Adjust padding for better spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Ensure task bars are aligned with the header */
+    transition: all 0.3s ease-in-out;
+    top: 5px; /* Align task bars with the date headers */
+    margin-top: 5px;
+    left: 0; /* Reset left to align dynamically */
+}
+
+/* Optional: Add a border for each task row */
+.task:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styling for Task Names */
+.task-name {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+/* Styling for task bars */
+.task-bar {
+    position: relative;
+    z-index: 1;
+}
