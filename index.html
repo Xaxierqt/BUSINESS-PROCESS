@@ -8,6 +8,43 @@
 </head>
 <body>
 
+    <!-- Adjusted legend -->
+    <div class="legend">
+        <h3>Legend</h3>
+        <ul>
+            <li>
+                <span class="dependency-arrow" style="cursor: pointer;">➔</span>
+                <a href="#dependencies" class="legend-link">Dependencies</a>
+            </li>
+            <li>
+                <span class="red-circle" style="cursor: pointer;">🔴</span>
+                <a href="#critical-path" class="legend-link">Critical Path</a>
+            </li>
+            <li>
+                <span class="milestone" style="cursor: pointer;">🔷</span>
+                <a href="#milestones" class="legend-link">Milestone</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Summary button -->
+    <div class="summary-button" id="summary-button" style="margin-top: 20px;">Tap me for Summary</div>
+
+    <!-- Summary modal -->
+    <div class="summary-modal" id="summary-modal">
+        <div class="summary-content">
+            <button class="close-summary" id="close-summary">✖</button>
+            <p>
+                This Gantt chart outlines the 7-month expansion plan of a software company from May 1 to November 30. 
+                It includes key phases such as office procurement, equipment acquisition, hiring, IT setup, compliance, 
+                logistics, and marketing. Major milestones—such as lease finalization, office setup, and launch—are 
+                clearly marked, with task dependencies indicated via arrows. A critical path has been identified to 
+                ensure timely execution of essential activities. All resources, durations, and deadlines have been 
+                realistically allocated based on standard practices in Philippine business operations.
+            </p>
+        </div>
+    </div>
+
     <h1>Gantt Chart for Software Company Expansion</h1>
 
     <!-- Gantt Chart Table -->
@@ -17,7 +54,7 @@
                 <tr>
                     <th style="width: 30%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">TASK</th>
                     <th style="width: 50%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">TIMEFRAME</th>
-                    <th style="width: 20%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">RESOURCE ALLOCATION</th>
+                    <th style="width: 20%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">PERSONNEL ALLOCATION</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,17 +64,18 @@
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                 </tr>
-                <tr id="task2">
+                <tr id="task2" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Search and Lease Office Space
                         <span class="dependency-arrow" data-task="task2">➔</span>
+                        <span class="red-circle" data-tooltip="Without this, renovation and legal compliance can’t even begin." style="cursor: pointer;">🔴</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 0%; width: 30%; background-color: lightblue;">
                             <span>May 1 - May 30</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Real Estate Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2 Real Estate Agents, 1 Admin Staff</td>
                 </tr>
                 <tr id="task3">
                     <td style="padding: 10px; border: 1px solid #ddd;">
@@ -76,18 +114,18 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Risk Management Team</td>
                 </tr>
-                <tr id="task6">
+                <tr id="task6" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Renovation and Office Setup Planning
                         <span class="dependency-arrow" data-task="task6">➔</span>
-                        <span class="milestone" data-milestone="Renovation Completed" data-date="July 5" data-reason="End of 'Renovation and Office Setup Planning'">🔷</span>
+                        <span class="red-circle" data-tooltip="This overlaps lease end and must finish before execution starts." style="cursor: pointer;">🔴</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 0%; width: 55%; background-color: salmon;">
                             <span>May 21 - July 5</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Facilities Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Architect, 2 Engineers</td>
                 </tr>
 
                 <!-- Month 2: Procurement, Hiring Process, and Preparation -->
@@ -96,10 +134,11 @@
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                 </tr>
-                <tr id="task7">
+                <tr id="task7" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Renovation and Office Setup
                         <span class="dependency-arrow" data-task="task7">➔</span>
+                        <span class="red-circle" data-tooltip="Essential physical setup for everything that follows." style="cursor: pointer;">🔴</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 20%; width: 25%; background-color: salmon;">
@@ -108,18 +147,19 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Facilities Team</td>
                 </tr>
-                <tr id="task8">
+                <tr id="task8" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Order Furniture and Equipment
                         <span class="dependency-arrow" data-task="task8">➔</span>
+                        <span class="red-circle" data-tooltip="Directly linked to the completion of renovation and precedes delivery." style="cursor: pointer;">🔴</span>
                         <span class="milestone" data-milestone="Equipment Fully Delivered" data-date="July 7" data-reason="End of 'Delivery and Setup'">🔷</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 20%; width: 30%; background-color: pink;">
-                            <span>June 5 - July 5</span>
+                            <span>June 5 - June 30</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Procurement Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Purchasing Officer, 1 Inventory Analyst</td>
                 </tr>
                 <tr id="task11">
                     <td style="padding: 10px; border: 1px solid #ddd;">
@@ -165,65 +205,67 @@
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                 </tr>
-                <tr id="task14">
+                <tr id="task14" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Set Up Network and Servers
                         <span class="dependency-arrow" data-task="task14">➔</span>
+                        <span class="red-circle" data-tooltip="Needs office space, power, and hardware ready; must finish before testing." style="cursor: pointer;">🔴</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 35%; width: 35%; background-color: yellow;">
-                            <span>June 15 - July 20</span>
+                            <span>June 15 - July 15</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2 Network Engineers</td>
                 </tr>
-                <tr id="task15">
+                <tr id="task15" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Install Software and Systems
                         <span class="dependency-arrow" data-task="task15">➔</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 35%; width: 20%; background-color: orange;">
-                            <span>July 15 - July 20</span>
+                            <span>July 8 - July 14</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2 IT Technicians</td>
                 </tr>
-                <tr id="task17">
+                <tr id="task17" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Test Systems and Infrastructure
                         <span class="dependency-arrow" data-task="task17">➔</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 35%; width: 25%; background-color: magenta;">
-                            <span>July 15 - July 25</span>
+                            <span>July 15 - August 7</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 QA Analyst, 1 SysAdmin</td>
                 </tr>
-                <tr id="task19">
+                <tr id="task19" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Onboarding and Training
                         <span class="dependency-arrow" data-task="task19">➔</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 35%; width: 35%; background-color: lightcoral;">
-                            <span>July 30 - August 5</span>
+                            <span>July 15 - August 7</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Trainer, 1 HR Officer</td>
                 </tr>
-                <tr id="task22">
+                <tr id="task22" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Delivery and Setup
                         <span class="dependency-arrow" data-task="task22">➔</span>
+                        <span class="red-circle" data-tooltip="Cannot start if furniture is late. If this is delayed, everything inside the office stalls." style="cursor: pointer;">🔴</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 35%; width: 15%; background-color: purple;">
                             <span>Jul 1 - Jul 7</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Procurement Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">2 Movers, 1 Supervisor</td>
                 </tr>
                 <tr id="task23">
                     <td style="padding: 10px; border: 1px solid #ddd;">
@@ -232,10 +274,10 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         <div class="task-bar" style="left: 35%; width: 30%; background-color: darkorange;">
-                            <span>Jul 1 - Jul 31</span>
+                            <span>May 5 - June 20</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Legal Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Legal Officer</td>
                 </tr>
 
                 <!-- Month 4: IT Testing, Continued Onboarding, and Final Compliance Check -->
@@ -268,7 +310,7 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">HR Team</td>
                 </tr>
-                <tr>
+                <tr id="task26" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Final Compliance Check
                         <span class="dependency-arrow" data-task="task26">➔</span>
@@ -311,7 +353,7 @@
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                 </tr>
-                <tr>
+                <tr id="task29" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Plan Relocation Logistics
                         <span class="dependency-arrow" data-task="task29">➔</span>
@@ -323,7 +365,7 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Logistics Team</td>
                 </tr>
-                <tr>
+                <tr id="task30" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Move Office Equipment
                         <span class="dependency-arrow" data-task="task30">➔</span>
@@ -335,7 +377,7 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Logistics Team</td>
                 </tr>
-                <tr>
+                <tr id="task31" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Set Up the New Office Space
                         <span class="dependency-arrow" data-task="task31">➔</span>
@@ -378,7 +420,7 @@
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                 </tr>
-                <tr>
+                <tr id="task34" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Complete Office Setup
                         <span class="dependency-arrow" data-task="task34">➔</span>
@@ -402,7 +444,7 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">IT Team</td>
                 </tr>
-                <tr id="task36">
+                <tr id="task36" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Finalize Compliance
                         <span class="dependency-arrow" data-task="task36">➔</span>
@@ -413,7 +455,7 @@
                             <span>Oct 8 - Oct 15</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Legal Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Compliance Auditor</td>
                 </tr>
                 <tr>
                     <td style="padding: 10px; border: 1px solid #ddd;">
@@ -434,7 +476,7 @@
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                     <td style="padding: 10px; border: 1px solid #ddd;"></td>
                 </tr>
-                <tr>
+                <tr id="task38" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Contingency Planning and Risk Mitigation
                         <span class="dependency-arrow" data-task="task38">➔</span>
@@ -470,10 +512,11 @@
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Project Management Team</td>
                 </tr>
-                <tr id="task41">
+                <tr id="task41" class="critical-path">
                     <td style="padding: 10px; border: 1px solid #ddd;">
                         Launch Marketing Campaign
                         <span class="dependency-arrow" data-task="task41">➔</span>
+                        <span class="red-circle" data-tooltip="End goal. All other tasks funnel into this." style="cursor: pointer;">🔴</span>
                         <span class="milestone" data-milestone="Launch Day" data-date="Nov 16" data-reason="Start of 'Launch Marketing Campaign'">🔷</span>
                     </td>
                     <td style="padding: 10px; border: 1px solid #ddd;">
@@ -481,7 +524,7 @@
                             <span>Nov 16 - Nov 30</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Marketing Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Digital Marketer</td>
                 </tr>
                 <tr id="task42">
                     <td style="padding: 10px; border: 1px solid #ddd;">
@@ -494,7 +537,7 @@
                             <span>Nov 16 - Nov 30</span>
                         </div>
                     </td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">Project Management Team</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">1 Project Manager</td>
                 </tr>
             </tbody>
         </table>
@@ -507,8 +550,11 @@
 
     <!-- Budget Allocation Table -->
     <h1>Budget Allocation (Total: ₱8,000,000)</h1>
-    <div class="budget-container">
-        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <div class="budget-container" style="display: flex; align-items: flex-start; margin-top: 20px;">
+        <div class="buffer-info" id="buffer-info" style="margin-right: 10px;">
+            Contingency & Buffer Planning
+        </div>
+        <table style="width: 100%; border-collapse: collapse;">
             <thead>
                 <tr>
                     <th style="width: 40%; text-align: left; padding: 10px; background-color: #f2f2f2; border: 1px solid #ddd;">Category</th>
@@ -580,10 +626,21 @@
                 <tr>
                     <td style="padding: 10px; border: 1px solid #ddd;">Post-Launch Marketing</td>
                     <td style="padding: 10px; border: 1px solid #ddd;">Dedicated to the final marketing push at the end of November</td>
-                    <td style="padding: 10px; border: 1px solid #ddd;">₱50,000</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">₱150,000</td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="buffer-modal" id="buffer-modal">
+        <div class="buffer-content">
+            <button class="close-buffer" id="close-buffer">✖</button>
+            <p>
+                Buffer time is strategically placed between critical tasks, especially before Final Office Launch (Task 22). 
+                Tasks like Risk Planning (Task 16) and Contingency Execution (Task 18) provide temporal space for managing delays. 
+                Additionally, the ₱1,000,000 contingency budget serves as a financial buffer for unforeseen challenges.
+            </p>
+        </div>
     </div>
 
     <script src="script.js"></script>
