@@ -106,4 +106,74 @@ document.addEventListener("DOMContentLoaded", () => {
             hideMilestoneTooltip();
         });
     });
+
+    const redCircleTooltip = document.createElement("div");
+    redCircleTooltip.className = "red-circle-tooltip";
+    document.body.appendChild(redCircleTooltip);
+
+    const showRedCircleTooltip = (event, message) => {
+        redCircleTooltip.innerHTML = message;
+        redCircleTooltip.style.left = `${event.pageX + 10}px`;
+        redCircleTooltip.style.top = `${event.pageY + 10}px`;
+        redCircleTooltip.classList.add("visible");
+    };
+
+    const hideRedCircleTooltip = () => {
+        redCircleTooltip.classList.remove("visible");
+    };
+
+    document.querySelectorAll(".red-circle").forEach((circle) => {
+        circle.addEventListener("mouseover", (event) => {
+            const message = circle.getAttribute("data-tooltip");
+            showRedCircleTooltip(event, message);
+        });
+
+        circle.addEventListener("mousemove", (event) => {
+            redCircleTooltip.style.left = `${event.pageX + 10}px`;
+            redCircleTooltip.style.top = `${event.pageY + 10}px`;
+        });
+
+        circle.addEventListener("mouseout", () => {
+            hideRedCircleTooltip();
+        });
+    });
+
+    // Summary modal functionality
+    const summaryButton = document.getElementById("summary-button");
+    const summaryModal = document.getElementById("summary-modal");
+    const closeSummary = document.getElementById("close-summary");
+
+    summaryButton.addEventListener("click", () => {
+        summaryModal.style.display = "flex";
+    });
+
+    closeSummary.addEventListener("click", () => {
+        summaryModal.style.display = "none";
+    });
+
+    summaryModal.addEventListener("click", (event) => {
+        if (event.target === summaryModal) {
+            summaryModal.style.display = "none";
+        }
+    });
+
+    // Buffer modal functionality
+    const bufferInfo = document.getElementById("buffer-info");
+    const bufferModal = document.getElementById("buffer-modal");
+    const closeBuffer = document.getElementById("close-buffer");
+
+    bufferInfo.addEventListener("click", () => {
+        bufferModal.style.display = "flex";
+    });
+
+    closeBuffer.addEventListener("click", () => {
+        bufferModal.style.display = "none";
+    });
+
+    bufferModal.addEventListener("click", (event) => {
+        if (event.target === bufferModal) {
+            bufferModal.style.display = "none";
+        }
+    });
 });
+
