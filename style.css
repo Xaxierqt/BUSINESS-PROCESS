@@ -12,12 +12,15 @@ h1 {
     color: #333;
 }
 
+/* Revert Gantt chart container width */
 .gantt-container {
     width: 100%;
+    max-width: 100%; /* Revert to full width */
+    margin: 0 auto; /* Center the container */
     border: 1px solid #ddd;
     margin-top: 20px;
-    position: relative; /* Ensure proper positioning for task bars */
-    overflow-x: auto;  /* Allow horizontal scrolling for large timelines */
+    position: relative;
+    overflow-x: auto; /* Allow horizontal scrolling for large timelines */
     background: linear-gradient(to right, #f9f9f9 1px, transparent 1px), 
                 linear-gradient(to bottom, #f9f9f9 1px, transparent 1px);
     background-size: 50px 50px; /* Adjust grid size */
@@ -277,4 +280,200 @@ h1 {
 
 .milestone-tooltip.visible {
     display: block;
+}
+
+/* Tooltip styling for red circles */
+.red-circle-tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    font-size: 14px;
+    color: #333;
+    pointer-events: none; /* Ensure the tooltip doesn't block mouse events */
+    display: none;
+}
+
+.red-circle-tooltip.visible {
+    display: block;
+}
+
+/* Remove red background and border for critical path rows */
+.critical-path {
+    background-color: transparent; /* Remove light red background */
+}
+
+.critical-path .task-bar {
+    border: none; /* Remove red border from task bars */
+}
+
+/* Adjusted legend styling */
+.legend {
+    position: absolute;
+    top: 10px; /* Keep it near the top */
+    left: 10px; /* Keep it near the left */
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px; /* Reduce padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+    font-size: 10px; /* Reduce font size */
+    z-index: 1000;
+    max-width: none; /* Allow it to stretch horizontally */
+    width: auto; /* Automatically adjust width based on content */
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Add spacing between items */
+    pointer-events: none; /* Make the legend non-interactive */
+}
+
+.legend h3 {
+    margin: 0; /* Remove margin */
+    font-size: 12px; /* Smaller font size for the heading */
+    color: #333;
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Arrange items horizontally */
+    gap: 10px; /* Add spacing between items */
+}
+
+.legend ul li {
+    display: flex;
+    align-items: center;
+}
+
+.legend ul li span {
+    margin-right: 5px;
+}
+
+.legend-link {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.2s ease-in-out;
+    pointer-events: none; /* Disable interaction for links */
+    color: #555; /* Change color to indicate non-interactivity */
+}
+
+/* Summary button styling */
+.summary-button {
+    position: absolute;
+    top: 30px; /* Move higher */
+    left: 10px; /* Align with the legend */
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 8px; /* Smaller size */
+    font-size: 10px; /* Smaller font */
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.summary-button:hover {
+    background-color: #0056b3;
+}
+
+/* Summary modal styling */
+.summary-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: justify;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-summary {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-summary:hover {
+    color: #007bff;
+}
+
+/* Styles for the "Contingency & Buffer Planning" rectangle and modal */
+.buffer-info {
+    position: absolute;
+    top: 50px; /* Keep under the critical path */
+    left: 150px; /* Adjust to align with the critical path */
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 8px; /* Smaller size */
+    font-size: 10px; /* Smaller font */
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.buffer-info:hover {
+    background-color: #0056b3;
+}
+
+.buffer-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.buffer-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: justify;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-buffer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-buffer:hover {
+    color: #007bff;
 }
